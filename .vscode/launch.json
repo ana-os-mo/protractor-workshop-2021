@@ -8,12 +8,19 @@
       "type": "node",
       "request": "launch",
       "name": "Debug tests",
+      //ejecutable de entrada del depurador
       "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      //ruta al config del protractor en el directorio dist
       "args": ["${workspaceRoot}/dist/protractor/local.config.js"],
+      //ejecuta la tarea
       "preLaunchTask": "npm: build",
+      //utiliza los source maps del directorio dist
       "sourceMaps": true,
+      //omite código no interesante que se genera en el proceso de transpilación
       "smartStep": true,
+      //abre la terminal del depuración
       "internalConsoleOptions": "openOnSessionStart",
+      //ruta dónde están los archivos sourceMap
       "outFiles": [
           "${workspaceFolder}/dist/**/*.js"
       ]
