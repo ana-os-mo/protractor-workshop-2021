@@ -5,10 +5,14 @@ export const config: Config = {
   framework: 'jasmine',
   specs: [ '../test/buy-tshirt.spec.js' ],
   SELENIUM_PROMISE_MANAGER: false,
-  getPageTimeout: 10000,
+  getPageTimeout: 30000,
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 120000
+  },
 
   onPrepare: () => {
     browser.ignoreSynchronization = true;
+    browser.manage().timeouts().implicitlyWait(0);
     reporter();
   }
 };
